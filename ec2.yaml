@@ -6,7 +6,7 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: t3.micro
-      ImageId: ami-068c0051b15cdb816
+      ImageId: ami-08d7aabbb50c2c24e
       Tags:
         - Key: Name
           Value: SampleEC2Instance
