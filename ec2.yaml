@@ -2,11 +2,24 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description:  EC2 instance in default VPC.
 
 Resources:
+
+  InstanceSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow SSH from my IP
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 200.105.212.53/32
+
   EC2Instance:
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: t3.micro
       ImageId: ami-08d7aabbb50c2c24e
+      SecurityGroupIds:
+        - !Ref InstanceSecurityGroup
       Tags:
         - Key: Name
           Value: SampleEC2Instance
