@@ -93,7 +93,7 @@ Resources:
     Type: AWS::EC2::LaunchTemplate
     Properties:
       LaunchTemplateData:
-        ImageId: "{{resolve:ssm:/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-6.1-x86_64}}"
+        ImageId: ami-08d7aabbb50c2c24e
         InstanceType: t3.micro
         IamInstanceProfile:
           Arn: !GetAtt InstanceProfile.Arn
