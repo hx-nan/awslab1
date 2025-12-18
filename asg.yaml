@@ -121,7 +121,7 @@ Resources:
         - !Ref SubnetB
       MinSize: "1"
       MaxSize: "4"
-      DesiredCapacity: "2"
+      DesiredCapacity: "1"
       LaunchTemplate:
         LaunchTemplateId: !Ref LaunchTemplate
         Version: !GetAtt LaunchTemplate.LatestVersionNumber
