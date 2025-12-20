@@ -1,7 +1,7 @@
 name: Deploy S3 bucket
 on:
   push:
-    branches: [ "dev" ]
+    branches: [ "task" ]
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -22,7 +22,7 @@ jobs:
         run: |
           # aws cloudformation delete-stack --stack-name my-ec2-stack
           aws cloudformation deploy \
-            --template-file asg.yaml \
+            --template-file alb.yaml \
             --stack-name my-ec2-stack \
             --capabilities CAPABILITY_NAMED_IAM \
             --no-fail-on-empty-changeset
